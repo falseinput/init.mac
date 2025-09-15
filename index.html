@@ -1,0 +1,71 @@
+<html>
+
+<head>
+	<title>toolove - Opiniated set of tools that makes your MacOS usable </title>
+	<style>
+		* {
+			font-family: monospace;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		main {
+			max-width: 600px;
+			text-align: center;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>toolove for MacOS</h1>
+
+		<strong>
+			<pre id="install">
+curl https://falseinput.com/awesometools.sh | sh
+			</pre>
+		</strong>
+
+		<p>Installs shit you need anyway:
+
+		<ul>
+			<li>Brew</li>
+			<li>Ghostty</li>
+			<li>Nerd fonts </li>
+			<li>Starship</li>
+			<li>Mise</li>
+		</ul>
+		</p>
+
+		<p>It automatically configures .zshrc to use Starship prompt load Mise context.</p>
+		<p>After installation, reload you shell:
+			<code>source ~/.zshrc</code>
+		</p>
+
+		<p>License: MIT</p>
+	</main>
+
+	<script>
+		document
+			.getElementById('install')
+			.addEventListener("click", handleCopy);
+
+		async function handleCopy(event) {
+			addToClipboard(event.target.innerText.trim());
+			alert("Copied to clipboard");
+		}
+
+		async function addToClipboard(text) {
+			const type = "text/plain";
+			const clipboardItemData = {
+				[type]: text,
+			};
+			const clipboardItem = new ClipboardItem(clipboardItemData);
+			await navigator.clipboard.write([clipboardItem]);
+		}
+	</script>
+</body>
+
+</html>
