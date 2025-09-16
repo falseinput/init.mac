@@ -25,10 +25,13 @@ append_config_line() {
     local config="$1"
     local file="$2"
 
+    [[ -f "$file" ]] || return 0
+
     if ! grep -Fxq "$config" "$file"; then
         echo "$config" >> "$file"
     fi
 }
+
 
 ensure_supported_os() {
     if [[ "$(uname -s)" != "Darwin" ]]; then
@@ -49,7 +52,7 @@ print_installation_status() {
 print_end_message() {
     print_installation_status
     echo ""
-    echo "To enable tools in current terminal session, run: \"source ~/.zshrc\""
+    echo "To enable tools in the current terminal session, run: \"source ~/.zshrc\""
 }
 
 ensure_supported_os
@@ -72,11 +75,11 @@ fi
 if ! is_installed starship; then
     curl -sS https://starship.rs/install.sh | sh -s -- --yes
     append_config_line 'eval "$(starship init zsh)"' "$HOME/.zshrc"
-    echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 fi
 
 if ! is_installed ghostty; then
     brew install --cask ghostty
+    append_config_line "keybind = global:ctrl+\`=toggle_quick_terminal" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 fi
 
 
