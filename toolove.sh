@@ -82,5 +82,14 @@ if ! is_installed ghostty; then
     append_config_line "keybind = global:ctrl+\`=toggle_quick_terminal" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 fi
 
+if ! is_installed aerospace; then
+    brew install --cask nikitabobko/tap/aerospace
+    
+    #check if config file exists, if not download default config
+    if [[ ! -f "$HOME/.aerospace.toml" ]]; then
+        curl -o "$HOME/.aerospace.toml" "https://toolove.falseinput.com/configs/aerospace.toml"
+    fi
+fi
+
 
 print_end_message
