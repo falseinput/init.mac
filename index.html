@@ -16,31 +16,68 @@
 			text-align: center;
 			margin: auto;
 		}
+
+		.card-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		.card {
+			padding: 8px;
+		}
+
+		.card__title {
+			font-weight: bold;
+		}
+
+		.t-italic {
+			font-style: italic;
+		}
 	</style>
 </head>
+
 <body>
 	<main>
 		<h1>toolove for MacOS</h1>
 
 		<strong>
 			<pre id="install">
-curl -sS https://toolove.falseinput.com/toolove.sh | sh
+curl -sS https://toolove.falseinput.com/install.sh | sh
 			</pre>
 		</strong>
 
-		<p>Installs shit you need anyway:
+		<p>Installs <span class="t-italic">essential missing parts</span> of your os:
 
-		<ul>
-			<li>Brew</li>
-			<li>Ghostty</li>
-			<li>Nerd fonts </li>
-			<li>Starship</li>
-			<li>Mise</li>
-		</ul>
+		<div class="card-container">
+			<div class="card">
+				<div class="card__title">Brew</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Ghostty</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Nerd fonts</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Starship</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Mise</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Aerospace</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Docker</div>
+			</div>
+			<div class="card">
+				<div class="card__title">Neovim</div>
+			</div>
+		</div>
 		</p>
 
 		<p>It automatically configures .zshrc to use Starship prompt & load Mise context.</p>
-		<p>After installation, reload you shell:
+		<p>Too see changes immediately, reload your shell:
 			<code>source ~/.zshrc</code>
 		</p>
 

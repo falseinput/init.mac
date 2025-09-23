@@ -91,5 +91,14 @@ if ! is_installed aerospace; then
     fi
 fi
 
+if ! is_installed docker; then
+    curl -sS "https://desktop.docker.com/mac/main/arm64/Docker.dmg" -o "/tmp/Docker.dmg"
+    cp -R "/Volumes/Docker/Docker.app" /Applications
+    rm /tmp/Docker.dmg
+fi
+
+if ! is_installed nvim; then
+    brew install neovim
+fi
 
 print_end_message
