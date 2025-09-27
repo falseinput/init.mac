@@ -1,0 +1,110 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+* {
+    font-family: monospace;
+}
+
+main {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 1em;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+td, th {
+    padding: 1em;
+    border: 1px solid black;
+}
+
+th {
+    text-align: left;
+    font-weight: bold;
+}
+
+a {
+    color: black;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+ul ul {
+    padding-left: 2em;
+}
+
+kbd {
+    border-radius: 3px;
+    border: 1px solid black;
+    color: black;
+    display: inline-block;
+    font-size: .85em;
+    line-height: 1;
+    padding: .2em .4em; 
+    white-space: nowrap;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+    margin: 0.5em 0;
+}
+
+hr {
+    margin-top: 4em;
+    border: 1px solid black;
+}
+
+.standout {
+    border: 2px dotted fuchsia;
+    padding: 1em;
+    display: block;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.blink {
+    animation: blink-animation 2s steps(2, start) infinite;
+}
+
+.terminal-cursor {
+    width: 0.5em;
+    height: 0.75em;
+    background: black;
+    display: inline-block;
+}

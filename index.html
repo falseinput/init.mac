@@ -1,108 +1,144 @@
 <html>
 
 <head>
-	<title>toolove - Opinionated set of tools that makes your MacOS usable</title>
-	<style>
-		* {
-			font-family: monospace;
-		}
-
-		ul {
-			list-style-type: none;
-		}
-
-		main {
-			max-width: 600px;
-			text-align: center;
-			margin: auto;
-		}
-
-		.card-container {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		.card {
-			padding: 8px;
-		}
-
-		.card__title {
-			font-weight: bold;
-		}
-
-		.t-italic {
-			font-style: italic;
-		}
-	</style>
+	<title>init.mac - Opinionated set of tools that makes your MacOS usable</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="description" content="init.mac - onverts your MacOS into a productive programmers environment">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 	<main>
-		<h1>toolove for MacOS</h1>
+		<h1><span class="blink terminal-cursor"></span>init.mac</h1>
 
 		<strong>
-			<pre id="install">
-curl -sS https://toolove.falseinput.com/install.sh | sh
-			</pre>
+			<pre class="standout" data-clipboard-target>
+curl -sS https://initmac.falseinput.com/install.sh | sh</pre>
 		</strong>
 
-		<p>Installs <span class="t-italic">essential missing parts</span> of your os:
-
-		<div class="card-container">
-			<div class="card">
-				<div class="card__title">Brew</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Ghostty</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Nerd fonts</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Starship</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Mise</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Aerospace</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Docker</div>
-			</div>
-			<div class="card">
-				<div class="card__title">Neovim</div>
-			</div>
-		</div>
+		<p>Converts your MacOS into a productive programmers environment with:</p>
 		</p>
+		<h3><i class="nf nf-fa-cube"></i> PACKAGE MANAGERS</h3>
+		<ul>
+			<li><a href="https://brew.sh/" target="_blank">Brew</a></li>
+			<li><a href="https://mise.jdx.dev/" target="_blank">Mise</a></li>
+			<li><a href="https://pnpm.io/" target="_blank">pnPM</a></li>
+			<li><a href="https://github.com/astral-sh/uv" target="_blank">UV</a></li>
+		</ul>
+		<h3><i class="nf nf-fa-terminal"></i> TERMINAL</h3>
+		<ul>
+			<li><a href="https://ghostty.org/" target="_blank">Ghostty</a></li>
+			<li><a href="https://www.nerdfonts.com/" target="_blank">Nerd fonts</a></li>
+			<li><a href="https://starship.rs/" target="_blank">Starship</a></li>
+		</ul>
+		<h3><i class="nf nf-fa-window_maximize"></i> WINDOW MANAGEMENT</h3>
+		<ul>
+			<li><a href="https://github.com/nikitabobko/AeroSpace" target="_blank">Aerospace</a></li>
+		</ul>
+		<h3><i class="nf nf-fa-wrench"></i> DEVELOPMENT TOOLS</h3>
+		<ul>
+			<li><a href="https://www.docker.com/" target="_blank">Docker</a></li>
+			<li><a href="https://nodejs.org/" target="_blank">NodeJS</a></li>
+			<li><a href="https://www.python.org/" target="_blank">Python</a></li>
+		</ul>
+		<h3><i class="nf nf-fa-pencil"></i> EDITORS</h3>
+		<ul>
+			<li><a href="https://neovim.io/" target="_blank">Neovim</a></li>
+			<li><a href="https://code.visualstudio.com/" target="_blank">VSCode</a></li>
+		</ul>
+		<hr>
 
-		<p>It automatically configures .zshrc to use Starship prompt & load Mise context.</p>
-		<p>Too see changes immediately, reload your shell:
-			<code>source ~/.zshrc</code>
+		<p><b>CONTENTS</b></p>
+		<ul>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#shell-configuration">Shell configuration</a></li>
+			<li><a href="#default-keybindings">Default keybindings</a></li>
+			<li><a href="#terminal-aliases">Terminal aliases</a></li>
+			<li><a href="#report-issues">Report issues</a></li>
+			<li><a href="#license">License</a></li>
+		</ul>
+
+		<h2 id="installation">Installation</h2>
+
+		<p>Run in terminal:
+		<pre data-clipboard-target>
+curl -sS https://initmac.falseinput.com/install.sh | sh</pre>
+
+		<p>To see changes immediately, reload your shell:
+		<pre data-clipboard-target>source ~/.zshrc</pre></p>
+
+		<h2 id="shell-configuration">Shell configuration</h2>
+
+		<p>This installer supports only .zshrc</p>
+		
+		<p>Starship and mise are automatically configured in the .zshrc.</p>
+		<p>This means that when you <code>cd</code> into dir you will see Starship prompt and Mise will load context if you used mise previously in this directory.</p>
+
+
+		<h2 id="default-keybindings">Default keybindings</h2>
+
+			<table>
+			<tr>
+				<td><kbd>Alt</kbd> + <kbd>/</kbd></td>
+				<td>Lay out windows in columns</td>
+			</tr>
+			<tr>
+				<td><kbd>Alt</kbd> + <kbd>1-10</kbd></td>
+				<td>Switch to workspace</td>
+			</tr>
+			<tr>
+				<td><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>1-10</kbd></td>
+				<td>Move active window to a workspace</td>
+			</tr>
+			<tr>
+				<td><kbd>Alt</kbd> + <kbd>&lt;</kbd></td>
+				<td>Move focus to the window on the left</td>
+			</tr>
+			<tr>
+				<td><kbd>Alt</kbd> + <kbd>&lt;</kbd></td>
+				<td>Move focus to the window on the right</td>
+			</tr>
+			<tr>
+				<td><kbd>Cmd</kbd> + <kbd>w</kbd></td>
+				<td>Close window</td>
+			</tr>
+			<tr>
+				<td><kbd>Cmd</kbd> + <kbd>W</kbd></td>
+				<td>Close all windows but current</td>
+			</tr>
+		</table>
+		<p>Aerospace keybinding are located in <code>~/.aerospace.toml</code></p>
+
+
+		<h2 id="terminal-aliases">Terminal aliases</h2>
+		<table>
+			<tr>
+				<td>n</td>
+				<td>nvim</td>
+			</tr>
+		</table>
+
+		<h2 id="report-issues">Report issues</h2>
+		<p>Please report issues at <a href="https://github.com/falseinput/initmac/issues">https://github.com/falseinput/initmac/issues</a></p>
+
+		<h2 id="license">License</h2>
+
+		<p>MIT</p>
+
+		<p>Copyright (c) 2025 Zbigniew Matysek</p>
+
+		<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+		<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+		<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
 		</p>
-
-		<p>License: MIT</p>
 	</main>
 
-	<script>
-		document
-			.getElementById('install')
-			.addEventListener("click", handleCopy);
-
-		async function handleCopy(event) {
-			addToClipboard(event.target.innerText.trim());
-			alert("Copied to clipboard");
-		}
-
-		async function addToClipboard(text) {
-			const type = "text/plain";
-			const clipboardItemData = {
-				[type]: text,
-			};
-			const clipboardItem = new ClipboardItem(clipboardItemData);
-			await navigator.clipboard.write([clipboardItem]);
-		}
-	</script>
+	<script src="./js/clipboard.js"></script>	
 </body>
 
 </html>
