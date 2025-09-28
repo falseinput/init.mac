@@ -115,4 +115,5 @@ hr {
     border: 1px solid black;
     background-color: white;
     padding: 0.5em;
+    pointer-events: none;
 }
