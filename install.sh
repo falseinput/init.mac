@@ -69,7 +69,11 @@ echo "
 
 "
 
+
+# Setup
 ensure_supported_os
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 printf "Installing Nerd Fonts... "
 install_fonts \
@@ -127,6 +131,18 @@ fi
 if ! is_installed code && ! is_app_installed "Visual Studio Code"; then
     printf "Installing Visual Studio Code... "
     run_command brew install --cask visual-studio-code
+    echo "Done!"
+fi
+
+if ! is_app_installed "Firefox"; then
+    printf "Installing Firefox... "
+    run_command brew install --cask firefox
+    echo "Done!"
+fi
+
+if ! is_app_installed "Google Chrome"; then
+    printf "Installing Google Chrome... "
+    run_command brew install --cask google-chrome
     echo "Done!"
 fi
 
