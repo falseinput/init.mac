@@ -99,7 +99,7 @@ if ! is_installed starship; then
     echo "Done!"
 fi
 
-if ! is_installed ghostty; then
+if ! is_app_installed Ghostty; then
     printf "Installing Ghostty... "
     run_command brew install --cask ghostty
     echo "Done!"
@@ -202,6 +202,19 @@ if ! is_intalled git-delta; then
     git config --global interactive.diffFilter "delta --color-only"
     git config --global delta.side-by-side true
     git config --global delta.line-numbers true
+    echo "Done!"
+fi
+
+if ! is_installed tlrc; then
+    printf "Installing tlrc... "
+    run_command brew install tlrc
+    echo "Done!"
+fi
+
+if ! is_installed lsd; then
+    printf "Installing lsd... "
+    run_command brew install lsd
+    append_config_line "alias ls='lsd'" "$HOME/.zshrc"
     echo "Done!"
 fi
 
