@@ -188,6 +188,23 @@ if ! is_installed shellcheck; then
     echo "Done!"
 fi
 
+if ! is_installed git; then
+    printf "Installing Git... "
+    run_command brew install git
+    echo "Done!"
+fi
+
+if ! is_intalled git-delta; then
+    printf "Installing git-delta... "
+    run_command brew install git-delta
+    echo "Done!"
+    printf "Configuring git-delta... "
+    git config --global interactive.diffFilter "delta --color-only"
+    git config --global delta.side-by-side true
+    git config --global delta.line-numbers true
+    echo "Done!"
+fi
+
 # Final message
 echo ""
 echo "All done!"
