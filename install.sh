@@ -194,7 +194,7 @@ if ! is_installed git; then
     echo "Done!"
 fi
 
-if ! is_intalled git-delta; then
+if ! is_installed git-delta; then
     printf "Installing git-delta... "
     run_command brew install git-delta
     echo "Done!"
